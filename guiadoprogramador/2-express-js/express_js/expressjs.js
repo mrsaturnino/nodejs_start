@@ -5,15 +5,23 @@ const app = express(); //Inicializando o express, através do método "express()
 //Criando rotas com o "get()".
 
 app.get("/", function (req, res) { //função com os parâmetros "req" (requisição) e "res" (resposta).
-    res.send("Bem-vindo ao site!") //Não podem ser enviadas duas "respostas".
+    res.send("Bem-vindo ao site!") 
 })
+
+//REQ => Dados recebidos do usuário
+//RES => Dados que serão enviados ao usuário
 
 app.get("/blog", function (req, res) {
     res.send("Bem-vindo ao blog!")
-})
+}) //Não podem ser enviadas duas "respostas" na mesma chamada.
 
 app.get("/canal/youtube", function(req, res) {
     res.send("Bem-vindo ao canal do youtube!")
+})
+
+app.get("/pagina/:nome", function (req, res) { //o parâmetro "req" recebe a requisição do usuário ao modificar o link com o intuito de entrar em outra página.
+    var nome = req.params.nome; //variável para armazenar o valor enviado ao parâmetro "req".
+    res.send("<h1>Olá " + nome + " </h1>") //exibindo o valor enviado ao "req" através de uma variável.
 })
 
 
