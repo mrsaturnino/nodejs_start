@@ -19,12 +19,22 @@
     <p>Linguagem favorita: <%= lang %></p>
     <p>Cargo: <%= cargo %></p>
 
-    <!--Estruturas de repetição no HTML com o EJS-->
+    <!--Estruturas condicionais no HTML com o EJS-->
     <% if( msg == true) {%>
-      <h3>Ocorreu um erro.</h3>
+    <h3>Ocorreu um erro.</h3>
 
     <% } else{ %>
-      <h3>Página funcionando normalmente.</h3>
+    <h3>Página funcionando normalmente.</h3>
     <% } %>
+
+    <!--Estruturas de repetição no HTML com o EJS-->
+
+    <% produtos.forEach(function(produto){ %>
+    <!--".forEach" é o método que irá varrer a array de objetos e aplicar "para cada" item a function definida.-->
+
+    <hr />
+    <h3><%=produto.nome%></h3>
+    <h4><%=produto.preco%></h4>
+    <% }) %>
   </body>
 </html>
