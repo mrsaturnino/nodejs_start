@@ -18,5 +18,13 @@
     <p>Nome: <%= nome %></p>
     <p>Linguagem favorita: <%= lang %></p>
     <p>Cargo: <%= cargo %></p>
+
+    <!--Estruturas de repetição no HTML com o EJS-->
+    <% if( msg == true) {%>
+      <h3>Ocorreu um erro.</h3>
+
+    <% } else{ %>
+      <h3>Página funcionando normalmente.</h3>
+    <% } %>
   </body>
 </html>
