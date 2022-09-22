@@ -1,6 +1,3 @@
-<!--TODOS os arquivos HTML devem ser postos na pasta "views" que é do EJS.-->
-<!--Arquivo HTML principal do projeto, com a única diferença da extensão no arquivo.-->
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -14,16 +11,28 @@
     <!--ARQUIVO CSS DO BOOTSTRAP-->
   </head>
 
-
   <body>
-    <h1>Estilo do BOOTSTRAP</h1>
-    
+    <div class="container">
 
-
-
-    
+        <div class="card">
+            <div class="card-header">
+                <h3>Realizar pergunta</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <label>Título</label>
+                    <input type="text" placeholder="Título" class="form-control" /> <!--A Classe "form-control" pertence ao bootstrap e serve para estilizar formulários.-->
+                    <br>
+                    <label>Descrição</label>
+                    <textarea placeholder="Faça a sua pergunta aqui"class="form-control"></textarea>
+                    <br>
+                    <button class="btn btn-primary">Enviar</button> <!--class "btn" do Bootstrap para personalizar botões. ex.: "class= btn btn-success "-->
+                  </form>
+            </div>
+        </div>
+      
+    </div>
   </body>
-
 
   <!--IMPORTANDO AS DEPENDÊNCIAS DO BOOTSTRAP (JQuery, Popper)-->
   <script
