@@ -8,12 +8,13 @@
                 <h3>Realizar pergunta</h3>
             </div>
             <div class="card-body">
-                <form>
+                <form method="POST" action="/dadosformulario"> <!--Criando o método POST para receber os dados preenchidos no formulário e enviando-os ao servidor por uma rota POST.-->
                     <label>Título</label>
-                    <input type="text" placeholder="Título" class="form-control" /> <!--A Classe "form-control" pertence ao bootstrap e serve para estilizar formulários.-->
+                    <!--A Classe "form-control" pertence ao bootstrap e serve para estilizar formulários.-->
+                    <input type="text" placeholder="Título" class="form-control" name="title"/> <!--É importante ter o parâmetro "name=" para utilizarmos no backend.-->
                     <br>
                     <label>Descrição</label>
-                    <textarea placeholder="Faça a sua pergunta aqui"class="form-control"></textarea>
+                    <textarea placeholder="Faça a sua pergunta aqui"class="form-control" name="description"></textarea>
                     <br>
                     <button class="btn btn-primary">Enviar</button> <!--class "btn" do Bootstrap para personalizar botões. ex.: "class= btn btn-success "-->
                   </form>
