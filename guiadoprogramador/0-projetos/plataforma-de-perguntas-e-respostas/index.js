@@ -1,6 +1,18 @@
 const express = require("express"); //importando o express para o projeto
 const app = express();
 const bodyParser = require("body-parser"); //importando o Body Parser para captura de dados enviados pelo formulário
+const connection = require("./database/database");
+
+//Banco de dados
+
+connection //estrutura promise javascript
+    .authenticate() //o '.authenticate()' vai tentar fazer a conexão com o banco.
+    .then(() =>{ // o '.then()' irá exibir uma mensagem quando a conexão com o MySQL for bem sucedida.
+        console.log("Conexão com o Banco de Dados realizada!")
+    })
+    .catch((msgErro) => { // o '.catch()' irá exibir um erro quando a conexão com o banco der errado.
+        console.log(msgErro)
+    })
 
 //Passando para o Express o motor de template (view engine) que utilizaremos, que é o "ejs".
 app.set('view engine', 'ejs'); 
