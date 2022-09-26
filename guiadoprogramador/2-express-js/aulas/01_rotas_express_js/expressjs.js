@@ -5,7 +5,7 @@ const app = express(); //Inicializando o express, através do método "express()
 //Criando rotas com o "get()".
 
 app.get("/", function (req, res) { //função com os parâmetros "req" (requisição) e "res" (resposta).
-    res.send("Bem-vindo ao site!") 
+    res.send("Bem-vindo ao site!")
 })
 
 //REQ => Dados recebidos do usuário
@@ -15,7 +15,7 @@ app.get("/blog", function (req, res) {
     res.send("Bem-vindo ao blog!")
 }) //Não podem ser enviadas duas "respostas" na mesma chamada.
 
-app.get("/canal/youtube", function(req, res) {
+app.get("/canal/youtube", function (req, res) {
     res.send("Bem-vindo ao canal do youtube!")
 })
 
@@ -28,17 +28,17 @@ app.get("/pagina/:nome", function (req, res) { //o parâmetro "req" recebe a req
 
 app.get("/blog/:artigo?", function (req, res) { //Criando um parâmetro opcional, colocando uma interrogação (?) no final.
     var artigo = req.params.artigo;
-    
+
     if (artigo) { //Condicional para: Se o "artigo" existir, ou seja, for inserido um valor ao parâmetro opcional, faça:
         res.send("Você está lendo o artigo: " + artigo)
     }
 })
 
 //Abrindo o servidor
-app.listen(4000, function(erro) { //Definida a porta do servidor e criada uma função para exibir uma mensagem em caso de erro e de normalidade.
+app.listen(4000, function (erro) { //Definida a porta do servidor e criada uma função para exibir uma mensagem em caso de erro e de normalidade.
     if (erro) {
         console.log("Ocorreu um erro ao iniciar o servidor.")
-    }else {
+    } else {
         console.log("Servidor iniciado")
     }
 })
